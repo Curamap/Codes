@@ -2,12 +2,22 @@ FROM node:18-alpine
 
 WORKDIR www/app
 
+<<<<<<< HEAD
 COPY package*.json ./
+=======
+COPY package*.jsom ./
+>>>>>>> b90287e (created and tested the frontend dockerfile, it works perfectly)
 
 RUN npm install
 
 COPY . .
 
+<<<<<<< HEAD
 EXPOSE 5000
 
 ENTRYPOINT [ "node", "index.js", "-l", "5000;" ]
+=======
+EXPOSE 80
+
+ENTRYPOINT [ "node", "index.js" ]
+>>>>>>> b90287e (created and tested the frontend dockerfile, it works perfectly)
