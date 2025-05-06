@@ -16,11 +16,13 @@ const OrderSummary = () => {
   const backToSelection = () =>
     navigate("/findmeds", { state: { selectedMedicines } });
   const proceedToCheckout = () =>
-    navigate("/payment-modal", { state: { selectedMedicines, pharmacy } });
+    navigate("/payment-modal", {
+      state: { selectedMedicines, pharmacy, total },
+    });
 
   const subtotal = selectedMedicines.reduce((acc, medicine) => {
     const { price, quantity } = medicine;
-    const calculatedPrice = Number(price) * Number(quantity);
+    const calculatedPrice = Number(price) + Number(quantity);
 
     const totalMedicinePrice = calculatedPrice * (quantity || 1);
     return acc + totalMedicinePrice;
@@ -28,7 +30,7 @@ const OrderSummary = () => {
 
   const tax = 1500;
 
-  const total = subtotal + tax;
+  const total = (subtotal + tax).toFixed(2); // Total price including tax
 
   // Check if any prescription medicines are selected
 
@@ -63,11 +65,11 @@ const OrderSummary = () => {
       </div>
 
       <div className="cart-text">
-        <div className="cart-text-1">
+        {/* <div className="cart-text-1">
           <p>Cart</p>
           <p>Checkout</p>
-        </div>
-        <p className="secure">100% Secure</p>
+        </div> */}
+        {/* <p className="secure">100% Secure</p> */}
       </div>
       <div className="cont-shopping" onClick={backToSelection}>
         <svg
@@ -86,7 +88,7 @@ const OrderSummary = () => {
         </svg>
 
         <button onClick={backToSelection} className="cont-btn">
-          Back to Selection
+          Find more Meds
         </button>
       </div>
 
@@ -148,7 +150,7 @@ const OrderSummary = () => {
             <div className="summary-divider"></div>
             <div className="summary-row total-row">
               <span>Total:</span>
-              <span>₦{total.toFixed(2)}</span>
+              <span>₦{total}</span>
             </div>
           </div>
           <div className="order-actions">

@@ -28,8 +28,8 @@ const SearchpageSummary = () => {
             <h3>Selected Medicines:</h3>
             <ul className="summary-list">
               {selectedMedicines.map((medicine) => {
-                const { price, quantity } = medicine;
-                const calculatedPrice = Number(price) * Number(quantity);
+                const { price } = medicine;
+                const calculatedPrice = Number(price);
 
                 return (
                   <li key={medicine.id}>
@@ -50,7 +50,7 @@ const SearchpageSummary = () => {
             onClick={viewShoppingCart}
             className="summary-btn view-cart-btn"
           >
-            View Shopping Cart
+            Find more Meds
           </button>
 
           <button
@@ -60,7 +60,7 @@ const SearchpageSummary = () => {
             disabled={selectedMedicines.length === 0}
             className="summary-btn continue-btn"
           >
-            Continue Shopping
+            Continue
           </button>
         </div>
         {/* Prescription warning message */}
