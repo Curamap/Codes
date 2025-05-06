@@ -75,7 +75,7 @@ jobs:
             export IMAGE_TAG=latest
             cd ~/curamap
             aws ecr get-login-password --region eu-west-3 | docker login --username AWS --password-stdin ${{ env.AWS_ECR_REGISTRY }}
-            docker compose pull curamap-frontend curamap-backend
-            docker compose down -v --remove-orphans
-            docker compose up -d --force-recreate curamap-frontend curamap-backend
-            docker image prune -af
+            sudo docker compose pull curamap-frontend curamap-backend
+            sudo docker compose down -v --remove-orphans
+            sudo docker compose up -d --force-recreate curamap-frontend curamap-backend
+            sudo docker image prune -af
