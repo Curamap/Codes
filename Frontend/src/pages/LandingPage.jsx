@@ -31,7 +31,11 @@ const LandingPage = () => {
   };
 
   const handleMedication = () => {
-    navigate("/findmeds");
+    navigate("/signin");
+  };
+
+  const handlePharmacy = () => {
+    navigate("/pharmacy-signup");
   };
 
   return (
@@ -43,28 +47,33 @@ const LandingPage = () => {
 
       <div className="MainContent">
         <div className="TextContent">
-          <h1>
-            Your Health Journey,
-            <br />
-            Mapped In a click.
-          </h1>
-          <img src={scribbling} alt="scribbling" />
-          <p>
-            We are here to make Healthcare simple and accessible,empowering you
-            <br />
-            to prioritize your wellbeing without the hassle.
-          </p>
-          <div className="Buttons-and-banner">
+          <div className="my-text">
+            <h1>
+              Your Health Journey,
+              <br />
+              Mapped In a click.
+            </h1>
+            <img src={scribbling} alt="scribbling" />
+            <p className="my-text-p">
+              We are here to make Healthcare simple and accessible,empowering
+              you
+              <br />
+              to prioritize your wellbeing without the hassle.
+            </p>
+
             <div className="buttons-container">
-            <button className="button-1" onClick={handleSignUp}>Sign Up</button>
-            <button className="button-2" onClick={handleLogin}>Sign In</button>
+              <button className="button-1" onClick={handleSignUp}>
+                Sign Up
+              </button>
+              <button className="button-2" onClick={handleLogin}>
+                Sign In
+              </button>
             </div>
-           
+          </div>
+          <div className="my-banner">
             <img src={banner} alt="Banner picture" />
           </div>
         </div>
-
-        
       </div>
       <div className="second-level-content">
         <h2>Connecting Patients to Pharmacies For Easy Medication Access.</h2>
@@ -114,13 +123,15 @@ const LandingPage = () => {
         <div className="third-level-content-text">
           <h2>Your Health Will Thank You</h2>
           <p>
-            order Easily, find Genuine Drug Instantly,Pay securely and Pick up
+            Order easily, find Genuine Drug Instantly,Pay securely and Pick up
             With Confidence-experience ,Fast safe and Reliable Access to
             Medication With Curamap
           </p>
           <button onClick={handleMedication}>Browse Medications</button>
         </div>
-        <img src={heartImage} alt="heart image" />
+        <div className="third-level-content-image">
+          <img src={heartImage} alt="heart image" />
+        </div>
       </div>
 
       <div className="fourth-level-content">
@@ -208,7 +219,7 @@ const LandingPage = () => {
               <h3>Wale</h3>
             </div>
             <p>
-              curamap has completely Transformed how i managemy prescription.As
+              Curamap has completely Transformed how i managemy prescription.As
               someone With a Hectic Schedule, The One-click Delivery Option is a
               Game-Changer.My Meds Arrive Quickly
             </p>
@@ -223,7 +234,7 @@ const LandingPage = () => {
             </div>
 
             <p>
-              i Love How Curamap Makes Health care so easy. i no longer have to
+              I Love How Curamap Makes Health care so easy. i no longer have to
               worry about long Pharmacy Ques or missing doses. The convenience
               of irdering online and the speed of delivery are unmatched,
               curamap has truly simplified my life.
@@ -289,7 +300,7 @@ const LandingPage = () => {
                     Transforming Nigerian Pharmaceutical <br />
                     Healthcare Through Enhanced Pharmacy Fulfillment
                   </p>
-                  <button>Partner with us</button>
+                  <button onClick={handlePharmacy}>Partner with us</button>
                 </div>
               </div>
             </div>
@@ -312,7 +323,7 @@ const LandingPage = () => {
       <div className="eight-level-content">
         <div className="column First-column">
           <h3>
-            Copyright 2025 BRIX Templates <br />| All Rights Reserved
+            Copyright 2025 Curamap <br />| All Rights Reserved
           </h3>
         </div>
         <div className="column second-column">
@@ -346,9 +357,8 @@ const LandingPage = () => {
           </ul>
         </div>
         <div className="Terms-container">
-        <h4>Terms And Conditions | Privacy Policy</h4>
+          <h4>Terms And Conditions | Privacy Policy</h4>
         </div>
-    
       </div>
     </div>
   );
