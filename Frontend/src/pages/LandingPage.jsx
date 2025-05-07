@@ -48,7 +48,10 @@ const LandingPage = () => {
             <br />
             Mapped In a click.
           </h1>
-          <img src={scribbling} alt="scribbling" />
+          <div >
+          <img className="scribbling-img" src={scribbling} alt="scribbling" />
+          </div>
+        
           <p>
             We are here to make Healthcare simple and accessible,empowering you
             <br />
@@ -60,7 +63,7 @@ const LandingPage = () => {
             <button className="button-2" onClick={handleLogin}>Sign In</button>
             </div>
            
-            <img src={banner} alt="Banner picture" />
+            <img className="banner-img" src={banner} alt="Banner picture" />
           </div>
         </div>
 
